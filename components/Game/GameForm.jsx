@@ -1,17 +1,20 @@
+import { Button, TextField } from "@material-ui/core";
 import React from "react";
 
 export const GameForm = ({ formik }) => (
   <form onSubmit={formik.handleSubmit}>
-    <label>Words</label>
-    {formik.errors.userInput ? <div>{formik.errors.userInput}</div> : null}
-
-    <input
+    <label>User input</label>
+    <TextField
       id="userInput"
       name="userInput"
       onChange={formik.handleChange}
       value={formik.values.userInput}
+      error={formik.touched.userInput && Boolean(formik.errors.userInput)}
+      helperText={formik.touched.userInput && formik.errors.userInput}
       maxLength={100}
     />
-    <button type="submit">Submit</button>
+    <Button color="primary" variant="contained" fullWidth type="submit">
+      Submit
+    </Button>
   </form>
 );

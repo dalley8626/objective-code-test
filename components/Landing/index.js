@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
+import { Button } from "@material-ui/core";
 
-export const StartContainer = () => {
+export const Landing = () => {
   const router = useRouter();
 
   return (
@@ -16,12 +17,13 @@ export const StartContainer = () => {
       </div>
 
       <div style={{ marginTop: 100 }}>
-        <button
+        <Button
           style={{ width: 400, height: 100 }}
           onClick={() => router.push("/player-selection")}
+          variant="contained"
         >
           Start now
-        </button>
+        </Button>
       </div>
     </div>
   );
