@@ -31,9 +31,7 @@ export default function Page() {
   }, [players, router]);
 
   useEffect(() => {
-    console.log("players", players);
     players?.map((item) => {
-      console.log("item", item);
       if (turn === item.id && item.tries < 1) {
         setTurn((prev) => prev + 1);
       }

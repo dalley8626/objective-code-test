@@ -7,8 +7,6 @@ import { Winner } from "../components/Winner";
 export default function Page() {
   const router = useRouter();
 
-  console.log("router", router);
-
   return (
     <CenterContainer>
       {router.query.name ? <Winner name={router.query.name} /> : <Fake />}
