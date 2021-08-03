@@ -1,6 +1,7 @@
 import { useRouter } from "next/dist/client/router";
 import React from "react";
 import { CenterContainer } from "../components/CenterContainer";
+import { PlayerSelection } from "../components/PlayerSelection";
 
 const players = [
   { id: 1, name: "player1", score: 0, correct: 0, tries: 10 },
@@ -9,7 +10,7 @@ const players = [
   { id: 4, name: "player4", score: 0, correct: 0, tries: 10 },
 ]; // can be dynamic as well
 
-export default function PlayerSelection() {
+export default function Page() {
   const router = useRouter();
 
   const participations = [2, 3, 4];
@@ -25,12 +26,7 @@ export default function PlayerSelection() {
 
   return (
     <CenterContainer>
-      How many players will be playing?
-      {participations.map((participate) => (
-        <button key={participate.id} onClick={() => startGame(participate)}>
-          {participate}
-        </button>
-      ))}
+      <PlayerSelection startGame={startGame} participations={participations} />
     </CenterContainer>
   );
 }

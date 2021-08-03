@@ -4,7 +4,7 @@ import { CenterContainer } from "../components/CenterContainer";
 import { Game } from "../components/game";
 import { getWords } from "./api/getWords";
 
-export default function Play() {
+export default function Page() {
   const [players, setPlayers] = useState();
   const [turn, setTurn] = useState(1);
 

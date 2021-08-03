@@ -16,17 +16,38 @@ export const Game = ({ players, turn, submit }) => {
   });
 
   return (
-    <div>
-      <h1>Words</h1>
-      <p>Player turn {turn}</p>
-      {players.map((item) => (
-        <div key={item.id}>
-          <p>
-            Player {item.id} Correctness {item?.correct ? item.correct : 0}{" "}
-            tries {item?.tries ? item.tries : 10}
-          </p>
-        </div>
-      ))}
+    <div
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignContent: "center",
+        textAlign: "center",
+      }}
+    >
+      <div style={{ margin: 50 }}>
+        <h1 style={{ textAlign: "center" }}>Be the champion</h1>
+      </div>
+
+      <div>
+        <h2 style={{ textAlign: "center" }}>Players: {players.length} / 4</h2>
+      </div>
+
+      <div style={{ flex: 1, textAlign: "left", display: "flex" }}>
+        {players.map((item) => (
+          <div
+            key={item.id}
+            style={{ flex: 1, flexDirection: "row", border: 1, margin: 100 }}
+          >
+            <h3>Player {item.id}</h3>
+            <div>
+              <p>Correctness {item?.correct ? item.correct : 0}</p>
+              <p>tries {item?.tries ? item.tries : 10}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h3>Player&apos;s turn {turn}</h3>
       <GameForm formik={formik} />
     </div>
   );

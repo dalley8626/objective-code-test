@@ -21,6 +21,7 @@ export const Landing = () => {
           style={{ width: 400, height: 100 }}
           onClick={() => router.push("/player-selection")}
           variant="contained"
+          color="primary"
         >
           Start now
         </Button>
