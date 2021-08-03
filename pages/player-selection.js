@@ -1,13 +1,13 @@
 import { useRouter } from "next/dist/client/router";
 import React from "react";
-import { CenterContainer } from "../components/centerContainer";
+import { CenterContainer } from "../components/CenterContainer";
 
 const players = [
-  { id: 1, name: "player1" },
-  { id: 2, name: "player2" },
-  { id: 3, name: "player3" },
-  { id: 4, name: "player4" },
-];
+  { id: 1, name: "player1", score: 0, correct: 0, tries: 10 },
+  { id: 2, name: "player2", score: 0, correct: 0, tries: 10 },
+  { id: 3, name: "player3", score: 0, correct: 0, tries: 10 },
+  { id: 4, name: "player4", score: 0, correct: 0, tries: 10 },
+]; // can be dynamic as well
 
 export default function PlayerSelection() {
   const router = useRouter();
