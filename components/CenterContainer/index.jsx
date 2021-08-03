@@ -9,6 +9,7 @@ export const CenterContainer = ({ children }) => (
       flexDirection: "column",
       minHeight: "100vh",
       minWidth: "100vm",
+      margin: 50,
     }}
   >
     {children}

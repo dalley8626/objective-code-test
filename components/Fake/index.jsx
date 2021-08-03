@@ -8,7 +8,7 @@ export const Fake = () => {
 
   return (
     <div style={{ flex: 1, width: 400 }}>
-      <div style={{ margin: 50 }}>
+      <div>
         <h1 style={{ textAlign: "center" }}>Not a winner</h1>
       </div>
 
@@ -20,10 +20,10 @@ export const Fake = () => {
 
       <div style={{ marginTop: 100 }}>
         <Button
-          style={{ width: 400, height: 100 }}
           onClick={() => router.push("/start")}
           variant="contained"
           color="primary"
+          fullWidth
         >
           Go to start
         </Button>

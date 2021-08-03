@@ -7,7 +7,7 @@ export const Winner = ({ name }) => {
   const router = useRouter();
   return (
     <div style={{ flex: 1, width: 400 }}>
-      <div style={{ margin: 50 }}>
+      <div>
         <h1 style={{ textAlign: "center" }}>Winner chicken dinner</h1>
       </div>
 
@@ -19,10 +19,10 @@ export const Winner = ({ name }) => {
 
       <div style={{ marginTop: 100 }}>
         <Button
-          style={{ width: 400, height: 100 }}
           onClick={() => router.push("/player-selection")}
           variant="contained"
           color="primary"
+          fullWidth
         >
           Start again
         </Button>

@@ -7,8 +7,8 @@ export const Start = () => {
   const router = useRouter();
 
   return (
-    <div style={{ flex: 1, width: 400 }}>
-      <div style={{ margin: 50 }}>
+    <div style={{ flex: 1 }}>
+      <div>
         <h1 style={{ textAlign: "center" }}>Game of words</h1>
       </div>
 
@@ -16,9 +16,9 @@ export const Start = () => {
         <Image src="/start.gif" alt="start" width={800} height={500} />
       </div>
 
-      <div style={{ marginTop: 100 }}>
+      <div style={{ marginTop: 30 }}>
         <Button
-          style={{ width: 400, height: 100 }}
+          fullWidth
           onClick={() => router.push("/player-selection")}
           variant="contained"
           color="primary"

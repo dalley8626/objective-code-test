@@ -19,12 +19,10 @@ export const Game = ({ players, turn, submit }) => {
     <div
       style={{
         flex: 1,
-        justifyContent: "center",
-        alignContent: "center",
-        textAlign: "center",
+        width: "100%",
       }}
     >
-      <div style={{ margin: 50 }}>
+      <div>
         <h1 style={{ textAlign: "center" }}>Be the champion</h1>
       </div>
 
@@ -32,12 +30,19 @@ export const Game = ({ players, turn, submit }) => {
         <h2 style={{ textAlign: "center" }}>Players: {players.length} / 4</h2>
       </div>
 
-      <div style={{ flex: 1, textAlign: "left", display: "flex" }}>
+      <div style={{ margin: 30 }}>
+        <h2 style={{ textAlign: "center" }}>Player&apos;s {turn} turn </h2>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          flexWrap: 1,
+        }}
+      >
         {players.map(({ id, correct, tries }) => (
-          <div
-            key={id}
-            style={{ flex: 1, flexDirection: "row", border: 1, margin: 100 }}
-          >
+          <div key={id}>
             <h3>Player {id}</h3>
             <div>
               <p>Correctness {correct}</p>
@@ -47,8 +52,13 @@ export const Game = ({ players, turn, submit }) => {
         ))}
       </div>
 
-      <h3>Player&apos;s {turn} turn </h3>
-      <GameForm formik={formik} />
+      <div
+        style={{
+          margin: 100,
+        }}
+      >
+        <GameForm formik={formik} />
+      </div>
     </div>
   );
 };

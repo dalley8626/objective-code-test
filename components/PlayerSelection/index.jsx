@@ -3,19 +3,11 @@ import React from "react";
 
 export const PlayerSelection = ({ participations, startGame }) => (
   <div style={{ flex: 1 }}>
-    <div style={{ margin: 50 }}>
+    <div>
       <h1>How many players will be playing?</h1>
     </div>
 
-    <div
-      style={{
-        display: "flex",
-        flex: 1,
-        justifyContent: "center",
-        alignContent: "center",
-        flexDirection: "row",
-      }}
-    >
+    <div>
       {participations.map((participate, i) => (
         <div
           style={{
