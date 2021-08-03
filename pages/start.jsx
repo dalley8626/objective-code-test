@@ -1,11 +1,11 @@
 import React from "react";
 import { CenterContainer } from "../components/CenterContainer";
-import { Landing } from "../components/Landing";
+import { Start } from "../components/Start";
 
 export default function Page() {
   return (
     <CenterContainer>
-      <Landing />
+      <Start />
     </CenterContainer>
   );
 }

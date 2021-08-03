@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
 import { Button } from "@material-ui/core";
 
-export const Landing = () => {
+export const Start = () => {
   const router = useRouter();
 
   return (

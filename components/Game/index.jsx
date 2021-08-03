@@ -47,7 +47,7 @@ export const Game = ({ players, turn, submit }) => {
         ))}
       </div>
 
-      <h3>Player&apos;s turn {turn}</h3>
+      <h3>Player&apos;s {turn} turn </h3>
       <GameForm formik={formik} />
     </div>
   );
