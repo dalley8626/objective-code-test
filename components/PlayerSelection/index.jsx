@@ -16,13 +16,13 @@ export const PlayerSelection = ({ participations, startGame }) => (
         flexDirection: "row",
       }}
     >
-      {participations.map((participate) => (
+      {participations.map((participate, i) => (
         <div
           style={{
             flex: 1,
             margin: 10,
           }}
-          key={participate.id}
+          key={i}
         >
           <Button
             variant="contained"

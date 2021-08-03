@@ -23,11 +23,22 @@ export default function Page() {
 
   useEffect(() => {
     const winner = players?.find((item) => item?.correct > 9);
+    //  find when everyone tries's run out
 
     if (winner) {
-      router.push("/winner", { query: { name: item.name } });
+      router.push({ pathname: "/winner", query: { name: winner.name } });
     }
   }, [players, router]);
+
+  useEffect(() => {
+    console.log("players", players);
+    players?.map((item) => {
+      console.log("item", item);
+      if (turn === item.id && item.tries < 1) {
+        setTurn((prev) => prev + 1);
+      }
+    });
+  }, [players, router, turn]);
 
   const updatePlayerScore = (score) => {
     const index = turn - 1; // lazy way
@@ -50,20 +61,21 @@ export default function Page() {
     const words = await getWords(
       values.userInput.split(",").map((word) => word.trim())
     );
-
     updatePlayerScore(words.matchedWords.length);
 
     setTurn((prev) => {
       if (prev > players.length - 1) return 1;
+      if (words.matchedWords.length < 1) return prev;
+
       return prev + 1;
-    }); // if player's tries === 0 then skip
+    });
   };
 
   if (!players) {
     return "loading";
   }
 
-  if (players < 2 || players > 4) {
+  if (players.length < 2 || players.length > 4) {
     return "Incorrect player amount";
   }
 

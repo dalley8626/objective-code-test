@@ -33,15 +33,15 @@ export const Game = ({ players, turn, submit }) => {
       </div>
 
       <div style={{ flex: 1, textAlign: "left", display: "flex" }}>
-        {players.map((item) => (
+        {players.map(({ id, correct, tries }) => (
           <div
-            key={item.id}
+            key={id}
             style={{ flex: 1, flexDirection: "row", border: 1, margin: 100 }}
           >
-            <h3>Player {item.id}</h3>
+            <h3>Player {id}</h3>
             <div>
-              <p>Correctness {item?.correct ? item.correct : 0}</p>
-              <p>tries {item?.tries ? item.tries : 10}</p>
+              <p>Correctness {correct}</p>
+              <p>tries {tries}</p>
             </div>
           </div>
         ))}
